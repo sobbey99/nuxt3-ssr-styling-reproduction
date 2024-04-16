@@ -11,5 +11,4 @@ export default defineNuxtConfig({
     runtimeConfig: {
         ssr: true,
     },
-    plugins: ["~/plugins/vue-query.ts"],
 });

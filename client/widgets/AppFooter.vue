@@ -1,11 +1,11 @@
 <template>
-  <footer :class="footer_bg">footer ({{ footer_bg }})</footer>
+  <footer :class="data.footer_bg">footer (response from server: {{ data.footer_bg }})</footer>
 </template>
 
 <script setup>
-import {useGetField} from "../entities/fields";
+import {ENDPOINT} from "../constants";
 
-const {footer_bg} = useGetField(["footer_bg"])
+const {data} = await useFetch(ENDPOINT)
 </script>
 
 <style scoped lang="scss">

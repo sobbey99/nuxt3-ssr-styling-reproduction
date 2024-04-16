@@ -1,14 +1,16 @@
 <template>
-  <header :class="header_bg">
+  <header :class="data.header_bg">
     HEADER
-    ({{ header_bg }})
+    (response from server: {{ data.header_bg }})
   </header>
 </template>
 
 <script setup>
-import {useGetField} from "../entities/fields";
 
-const {header_bg} = useGetField(["header_bg"])
+import {ENDPOINT} from "../constants";
+
+const {data} = await useFetch(ENDPOINT)
+
 </script>
 
 <style scoped lang="scss">
